@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 function Navbar() {
   return (
     <nav className="bg-zinc-900 text-white px-8 py-4 flex justify-between items-center">
@@ -5,19 +6,11 @@ function Navbar() {
         Habit Planner
       </h1>
 
-      <ul className="flex gap-6 text-sm">
-        <li className="cursor-pointer hover:text-blue-400">
-          Dashboard
-        </li>
-
-        <li className="cursor-pointer hover:text-blue-400">
-          Habits
-        </li>
-
-        <li className="cursor-pointer hover:text-blue-400">
-          Progress
-        </li>
-      </ul>
+        <div className="flex gap-8 text-white">
+            <Link to="/">Dashboard</Link>
+            <Link to="/habits">Habits</Link>
+            <Link to="/progress">Progress</Link>
+        </div>
     </nav>
   );
 }

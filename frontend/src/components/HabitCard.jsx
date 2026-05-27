@@ -1,4 +1,4 @@
-function HabitCard({ title, streak, status }) {
+function HabitCard({ id, title, streak, status, deleteHabit }) {
   return (
     <div className="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 hover:border-blue-500 hover:-translate-y-1 transition duration-300 shadow-lg">
       <h2 className="text-2xl font-semibold text-white">
@@ -21,6 +21,12 @@ function HabitCard({ title, streak, status }) {
       >
         {status}
       </button>
+      <button
+        onClick={() => deleteHabit(id)}
+        className="bg-red-500 text-white px-4 py-2 rounded-lg mt-3"
+        >
+         Delete
+       </button>
     </div>
   );
 }

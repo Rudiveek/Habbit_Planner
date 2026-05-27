@@ -1,68 +1,79 @@
-import { useState } from "react";
-import HabitCard from "../components/HabitCard";
-import AddHabitForm from "../components/AddHabitForm";
+import { useState } from 'react'
+import HabitCard from '../components/HabitCard'
+import AddHabitForm from '../components/AddHabitForm'
 
 function Dashboard() {
   const [habits, setHabits] = useState([
     {
-      title: "Morning Workout",
+      id: 1,
+      title: 'Morning Workout',
       streak: 12,
-      status: "Completed",
+      status: 'Completed',
     },
     {
-      title: "Reading Books",
+      id: 2,
+      title: 'Reading Books',
       streak: 8,
-      status: "In Progress",
+      status: 'In Progress',
     },
     {
-      title: "Meditation",
+      id: 3,
+      title: 'Meditation',
       streak: 20,
-      status: "Completed",
+      status: 'Completed',
     },
-  ]);
+  ])
 
-  const addHabit = (title) => {
-    const newHabit = {
-      title,
-      streak: 0,
-      status: "In Progress",
-    };
+  const addHabit = (newHabit) => {
+  const habit = {
+    id: Date.now(),
+    title: newHabit,
+    streak: 0,
+    status: 'In Progress',
+  }
 
-    setHabits([...habits, newHabit]);
-  };
+  setHabits([...habits, habit])
+}
+
+const deleteHabit = (id) => {
+  const updatedHabits = habits.filter(
+    (habit) => habit.id !== id
+  )
+
+  setHabits(updatedHabits)
+}
 
   return (
-    <div className="text-white px-8 md:px-16 py-20">
-      <div className="max-w-5xl">
-        <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+    <div className="p-10">
+      <div className="mb-10">
+        <h1 className="text-white text-7xl font-bold mb-6">
           Track Your Daily Habits
         </h1>
 
-        <p className="text-zinc-400 text-lg md:text-2xl mt-6 leading-relaxed">
-          Build consistency, improve productivity,
-          and achieve your goals with your personal
-          habit planner.
+        <p className="text-gray-400 text-2xl mb-10">
+          Build consistency, improve productivity, and achieve your goals.
         </p>
 
-        <button className="mt-10 bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-xl font-semibold transition duration-300">
+        <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-semibold mb-12">
           Get Started
         </button>
 
         <AddHabitForm addHabit={addHabit} />
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6 mt-20">
-        {habits.map((habit, index) => (
-          <HabitCard
-            key={index}
-            title={habit.title}
-            streak={habit.streak}
-            status={habit.status}
-          />
-        ))}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {habits.map((habit) => (
+  <HabitCard
+    id={habit.id}
+    title={habit.title}
+    streak={habit.streak}
+    status={habit.status}
+    deleteHabit={deleteHabit}
+  />
+))}
       </div>
     </div>
-  );
+  )
 }
 
-export default Dashboard;
+export default Dashboard
