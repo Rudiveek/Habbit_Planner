@@ -26,3 +26,69 @@ The main goal of the Habit Planner application is to help users organize, track,
 
 The Habit Planner application includes several important features that improve usability and user engagement. The system should provide secure user authentication, allowing users to register, log in, and manage their personal accounts safely. Users can create, edit, delete, and track habits based on categories such as fitness, study, health, or productivity. The application should include a daily tracking dashboard that displays completed habits, progress percentages, and current streaks. Additional features such as reminders, calendar views, dark mode, analytics, progress charts, achievement badges, and AI-based habit suggestions can further enhance the user experience. These features together create an organized and motivating environment for effective habit management.
 
+
+
+##### Feature Planning Prerequisites:
+
+
+
+Phase 1 — MVP (Minimum Viable Product)
+
+
+
+Build only:
+
+
+
+Login/Register
+
+Create Habit
+
+Mark Habit Complete
+
+Daily Tracking
+
+Basic Dashboard
+
+Phase 2
+
+
+
+Add:
+
+
+
+Streak system
+
+Calendar view
+
+Analytics
+
+Dark mode
+
+Phase 3
+
+
+
+Add:
+
+
+
+AI suggestions
+
+Social sharing
+
+Challenges
+
+Gamification
+
+Mobile app
+
+
+
+
+
+
+
+
+
