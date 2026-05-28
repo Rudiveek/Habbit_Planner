@@ -1,4 +1,11 @@
-function HabitCard({ id, title, streak, status, deleteHabit }) {
+function HabitCard({
+  id,
+  title,
+  streak,
+  status,
+  deleteHabit,
+  toggleStatus,
+}) {
   return (
     <div className="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 hover:border-blue-500 hover:-translate-y-1 transition duration-300 shadow-lg">
       <h2 className="text-2xl font-semibold text-white">
@@ -13,6 +20,7 @@ function HabitCard({ id, title, streak, status, deleteHabit }) {
       </p>
 
       <button
+        onClick={() => toggleStatus(id)}
         className={`mt-5 px-4 py-2 rounded-lg text-sm font-medium ${
           status === "Completed"
             ? "bg-green-600"

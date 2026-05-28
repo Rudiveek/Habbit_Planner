@@ -1,28 +1,37 @@
-import { useState } from 'react'
+import { useEffect, useState } from "react"
 import HabitCard from '../components/HabitCard'
 import AddHabitForm from '../components/AddHabitForm'
 
 function Dashboard() {
-  const [habits, setHabits] = useState([
-    {
-      id: 1,
-      title: 'Morning Workout',
-      streak: 12,
-      status: 'Completed',
-    },
-    {
-      id: 2,
-      title: 'Reading Books',
-      streak: 8,
-      status: 'In Progress',
-    },
-    {
-      id: 3,
-      title: 'Meditation',
-      streak: 20,
-      status: 'Completed',
-    },
-  ])
+  const [habits, setHabits] = useState(() => {
+  const savedHabits = localStorage.getItem("habits")
+
+  return savedHabits
+    ? JSON.parse(savedHabits)
+    : [
+        {
+          id: 1,
+          title: "Morning Workout",
+          streak: 12,
+          status: "Completed",
+        },
+        {
+          id: 2,
+          title: "Reading Books",
+          streak: 8,
+          status: "In Progress",
+        },
+        {
+          id: 3,
+          title: "Meditation",
+          streak: 20,
+          status: "Completed",
+        },
+      ]
+})
+  useEffect(() => {
+  localStorage.setItem("habits", JSON.stringify(habits))
+}, [habits])
 
   const addHabit = (newHabit) => {
   const habit = {
@@ -38,6 +47,22 @@ function Dashboard() {
 const deleteHabit = (id) => {
   const updatedHabits = habits.filter(
     (habit) => habit.id !== id
+  )
+
+  setHabits(updatedHabits)
+}
+
+const toggleStatus = (id) => {
+  const updatedHabits = habits.map((habit) =>
+    habit.id === id
+      ? {
+          ...habit,
+          status:
+            habit.status === "Completed"
+              ? "In Progress"
+              : "Completed",
+        }
+      : habit
   )
 
   setHabits(updatedHabits)
@@ -69,6 +94,7 @@ const deleteHabit = (id) => {
     streak={habit.streak}
     status={habit.status}
     deleteHabit={deleteHabit}
+    toggleStatus={toggleStatus}
   />
 ))}
       </div>
