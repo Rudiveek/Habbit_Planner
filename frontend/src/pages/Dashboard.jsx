@@ -67,7 +67,15 @@ const toggleStatus = (id) => {
 
   setHabits(updatedHabits)
 }
+const editHabit = (id, newTitle) => {
+  const updatedHabits = habits.map((habit) =>
+    habit.id === id
+      ? { ...habit, title: newTitle }
+      : habit
+  )
 
+  setHabits(updatedHabits)
+}
   return (
     <div className="p-10">
       <div className="mb-10">
@@ -95,6 +103,7 @@ const toggleStatus = (id) => {
     status={habit.status}
     deleteHabit={deleteHabit}
     toggleStatus={toggleStatus}
+    editHabit={editHabit}
   />
 ))}
       </div>
