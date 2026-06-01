@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function HabitCard({
   id,
@@ -12,6 +13,8 @@ function HabitCard({
   const [isEditing, setIsEditing] = useState(false);
   const [editedTitle, setEditedTitle] = useState(title);
 
+  const navigate = useNavigate();
+
   const saveEdit = () => {
     editHabit(id, editedTitle);
     setIsEditing(false);
@@ -19,7 +22,7 @@ function HabitCard({
 
   return (
     <div className="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 hover:border-blue-500 hover:-translate-y-1 transition duration-300 shadow-lg">
-      
+
       {isEditing ? (
         <input
           type="text"
@@ -28,7 +31,10 @@ function HabitCard({
           className="bg-zinc-800 text-white px-3 py-2 rounded-lg w-full"
         />
       ) : (
-        <h2 className="text-2xl font-semibold text-white">
+        <h2
+          onClick={() => navigate(`/habit/${id}`)}
+          className="text-2xl font-semibold text-white cursor-pointer hover:text-blue-400 transition"
+        >
           {editedTitle}
         </h2>
       )}
@@ -72,6 +78,7 @@ function HabitCard({
           Delete
         </button>
       </div>
+
     </div>
   );
 }
