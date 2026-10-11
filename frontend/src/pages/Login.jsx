@@ -22,6 +22,12 @@ export default function Login() {
       return;
     }
 
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(email.trim())) {
+      setError('Please enter a valid email address (e.g., name@example.com).');
+      return;
+    }
+
     setIsSubmitting(true);
     const result = await login(email, password);
     setIsSubmitting(false);

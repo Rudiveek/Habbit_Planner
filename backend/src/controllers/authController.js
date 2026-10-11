@@ -17,6 +17,12 @@ export const registerUser = async (req, res, next) => {
       throw new Error('Please provide name, email, and password');
     }
 
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(email.trim())) {
+      res.status(400);
+      throw new Error('Please provide a valid email address (e.g. name@example.com)');
+    }
+
     if (password.length < 6) {
       res.status(400);
       throw new Error('Password must be at least 6 characters long');
@@ -84,6 +90,12 @@ export const loginUser = async (req, res, next) => {
     if (!email || !password) {
       res.status(400);
       throw new Error('Please provide both email and password');
+    }
+
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(email.trim())) {
+      res.status(400);
+      throw new Error('Please provide a valid email address');
     }
 
     // Persistent JSON database mode when MongoDB is not running locally

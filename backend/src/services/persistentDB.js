@@ -207,6 +207,11 @@ class PersistentDB {
   // --- USER AUTHENTICATION & MANAGEMENT ---
   async registerUser({ name, email, password }) {
     const normalizedEmail = email.toLowerCase().trim();
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(normalizedEmail)) {
+      throw new Error('Please enter a valid email address (e.g. name@gmail.com)');
+    }
+
     const existing = this.data.users.find((u) => u.email.toLowerCase() === normalizedEmail);
     if (existing) {
       throw new Error('An account with this email address already exists');
@@ -294,15 +299,20 @@ class PersistentDB {
 
   async loginUser({ email, password }) {
     const normalizedEmail = email.toLowerCase().trim();
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(normalizedEmail)) {
+      throw new Error('Please enter a valid email address');
+    }
+
     const user = this.data.users.find((u) => u.email.toLowerCase() === normalizedEmail);
 
     if (!user) {
-      throw new Error('Invalid email or password');
+      throw new Error('No account found with this email. Please check your email or create an account.');
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      throw new Error('Invalid email or password');
+      throw new Error('Incorrect password. Please try again.');
     }
 
     const { password: _, ...userWithoutPassword } = user;

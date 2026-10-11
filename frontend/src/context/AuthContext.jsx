@@ -45,24 +45,7 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem('aura_user', JSON.stringify(receivedUser));
       return { success: true };
     } catch (err) {
-      // Offline/Dev fallback if MongoDB is not connected locally
-      if (!err.response && process.env.NODE_ENV !== 'production') {
-        const fallbackUser = {
-          _id: 'dev-user-1',
-          name: email.split('@')[0] || 'Aura Member',
-          email,
-          avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80',
-          preferences: { theme: 'dark', accentColor: 'indigo' }
-        };
-        const fallbackToken = 'dev-offline-mock-token-aura';
-        setToken(fallbackToken);
-        setUser(fallbackUser);
-        localStorage.setItem('aura_token', fallbackToken);
-        localStorage.setItem('aura_user', JSON.stringify(fallbackUser));
-        return { success: true, isFallback: true };
-      }
-
-      const message = err.response?.data?.message || err.message || 'Login failed';
+      const message = err.response?.data?.message || (err.message?.includes('Network Error') ? 'Connecting to cloud server... Please retry in a few seconds.' : err.message) || 'Login failed';
       return { success: false, error: message };
     }
   };
@@ -78,24 +61,7 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem('aura_user', JSON.stringify(receivedUser));
       return { success: true };
     } catch (err) {
-      // Offline/Dev fallback if MongoDB is not connected locally
-      if (!err.response && process.env.NODE_ENV !== 'production') {
-        const fallbackUser = {
-          _id: 'dev-user-new',
-          name,
-          email,
-          avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80',
-          preferences: { theme: 'dark', accentColor: 'indigo' }
-        };
-        const fallbackToken = 'dev-offline-mock-token-aura';
-        setToken(fallbackToken);
-        setUser(fallbackUser);
-        localStorage.setItem('aura_token', fallbackToken);
-        localStorage.setItem('aura_user', JSON.stringify(fallbackUser));
-        return { success: true, isFallback: true };
-      }
-
-      const message = err.response?.data?.message || err.message || 'Registration failed';
+      const message = err.response?.data?.message || (err.message?.includes('Network Error') ? 'Connecting to cloud server... Please retry in a few seconds.' : err.message) || 'Registration failed';
       return { success: false, error: message };
     }
   };
