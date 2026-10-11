@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import AuraLogo from "../AuraLogo";
 import {
     LayoutDashboard,
     Target,
@@ -100,10 +101,8 @@ export function Sidebar() {
         >
             <div>
                 {/* Logo Header */}
-                <div className="h-16 flex items-center px-4 border-b border-zinc-800/60 overflow-hidden">
-                    <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center text-white shrink-0 shadow-lg shadow-indigo-500/20">
-                        <Sparkles className="w-5 h-5 animate-pulse-slow" />
-                    </div>
+                <div className="h-16 flex items-center px-3.5 border-b border-zinc-800/60 overflow-hidden">
+                    <AuraLogo size="sm" />
                     <div className="ml-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap overflow-hidden">
                         <h1 className="font-extrabold text-base tracking-wider bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
                             AURA

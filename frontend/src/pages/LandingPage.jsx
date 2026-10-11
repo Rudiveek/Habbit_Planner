@@ -1,4 +1,4 @@
-import React from 'react';
+import AuraLogo from '../components/AuraLogo';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useApp } from '../context/AppContext';
@@ -43,9 +43,7 @@ export default function LandingPage() {
       {/* 1. SaaS Navbar */}
       <header className="sticky top-0 z-50 backdrop-blur-xl border-b border-zinc-800/60 px-6 lg:px-12 h-20 flex items-center justify-between transition-colors">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/25">
-            <Sparkles className="w-5 h-5 animate-pulse-slow" />
-          </div>
+          <AuraLogo size="md" />
           <div>
             <span className="text-xl font-black tracking-wider bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
               AURA
