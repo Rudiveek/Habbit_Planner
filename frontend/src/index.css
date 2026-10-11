@@ -1,1 +1,377 @@
 @import "tailwindcss";
+
+/* =========================================================================
+   THEME MODE: LIGHT MODE (Pure Daylight White & Slate Minimalism)
+   - Header, Sidebar, Cards, Banners, Meal Items: Pure Crisp White (#ffffff)
+   - Background: Clean Soft Slate Canvas (#f8fafc)
+   - High Contrast Dark Typography: #0f172a / #334155
+   - Refined Borders: #e2e8f0
+   - Primary Accent: Terracotta Flame / Indigo Glow
+   ========================================================================= */
+
+html.light {
+  color-scheme: light;
+}
+
+html.light body {
+  background-color: #f8fafc;
+  color: #0f172a;
+  background-image: none;
+}
+
+/* --- Topbar & Navigation Header (Pure White) --- */
+html.light header {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light header .text-zinc-400,
+html.light header .text-zinc-300 {
+  color: #475569 !important;
+}
+
+html.light header .bg-zinc-900\/80,
+html.light header .bg-zinc-900 {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+html.light header button {
+  color: #334155 !important;
+}
+
+/* --- Sidebar (Pure White Frame) --- */
+html.light aside {
+  background-color: #ffffff !important;
+  border-right: 1px solid #e2e8f0 !important;
+  box-shadow: 1px 0 3px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light aside h1 {
+  color: #0f172a !important;
+}
+
+html.light aside .text-zinc-500 {
+  color: #64748b !important;
+}
+
+html.light aside .text-zinc-400 {
+  color: #475569 !important;
+}
+
+html.light aside a.text-zinc-400:hover {
+  color: #0f172a !important;
+  background-color: #f1f5f9 !important;
+}
+
+html.light aside a.bg-indigo-600\/20,
+html.light aside a.active {
+  background-color: #d9531e !important;
+  color: #ffffff !important;
+  border-color: #d9531e !important;
+}
+
+/* --- Active Mindset Banner (Pure White Card) --- */
+html.light .from-indigo-950\/80,
+html.light .via-purple-950\/60,
+html.light .to-zinc-900 {
+  --tw-gradient-from: #ffffff !important;
+  --tw-gradient-via: #ffffff !important;
+  --tw-gradient-to: #ffffff !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03) !important;
+}
+
+html.light .from-indigo-950\/80 h1,
+html.light .from-indigo-950\/80 h2,
+html.light .from-indigo-950\/80 blockquote,
+html.light .from-indigo-950\/80 .text-zinc-100 {
+  color: #0f172a !important;
+}
+
+html.light .from-indigo-950\/80 p,
+html.light .from-indigo-950\/80 .text-zinc-400,
+html.light .from-indigo-950\/80 .text-indigo-300 {
+  color: #475569 !important;
+}
+
+html.light .from-indigo-950\/80 .text-indigo-400 {
+  color: #d9531e !important;
+}
+
+html.light .from-indigo-950\/80 .bg-indigo-600\/20 {
+  background-color: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04) !important;
+}
+
+html.light .from-indigo-950\/80 .bg-indigo-600\/20 .text-zinc-400 {
+  color: #64748b !important;
+}
+
+html.light .from-indigo-950\/80 .bg-indigo-600\/20 .text-indigo-400 {
+  color: #0f172a !important;
+}
+
+/* --- Habit Cards (Pure White Surfaces) --- */
+html.light .from-\[\#121b16\],
+html.light .to-\[\#0d1210\] {
+  --tw-gradient-from: #ffffff !important;
+  --tw-gradient-to: #ffffff !important;
+  background: #ffffff !important;
+  border: 1.5px solid #10b981 !important;
+  box-shadow: 0 4px 16px -2px rgba(16, 185, 129, 0.1) !important;
+}
+
+html.light .from-\[\#121b16\] h3,
+html.light .to-\[\#0d1210\] h3 {
+  color: #0f172a !important;
+}
+
+html.light .from-\[\#121b16\] p,
+html.light .to-\[\#0d1210\] p {
+  color: #475569 !important;
+}
+
+html.light .from-\[\#121b16\] span,
+html.light .to-\[\#0d1210\] span {
+  color: #475569 !important;
+}
+
+html.light .from-\[\#121b16\] svg,
+html.light .to-\[\#0d1210\] svg {
+  color: #0f172a !important;
+}
+
+html.light .from-\[\#121b16\] .border-zinc-800\/60,
+html.light .to-\[\#0d1210\] .border-zinc-800\/60 {
+  border-color: #f1f5f9 !important;
+}
+
+/* Streak badge inside completed card */
+html.light .from-\[\#121b16\] .bg-amber-500\/10,
+html.light .to-\[\#0d1210\] .bg-amber-500\/10 {
+  background-color: #fef3c7 !important;
+  border-color: #fde68a !important;
+  color: #b45309 !important;
+}
+
+/* Done button inside completed card */
+html.light .from-\[\#121b16\] button.bg-emerald-500\/20,
+html.light .to-\[\#0d1210\] button.bg-emerald-500\/20 {
+  background-color: #10b981 !important;
+  color: #ffffff !important;
+  border-color: #059669 !important;
+}
+html.light .from-\[\#121b16\] button.bg-emerald-500\/20 span,
+html.light .to-\[\#0d1210\] button.bg-emerald-500\/20 span,
+html.light .from-\[\#121b16\] button.bg-emerald-500\/20 svg,
+html.light .to-\[\#0d1210\] button.bg-emerald-500\/20 svg {
+  color: #ffffff !important;
+}
+
+/* Uncompleted card action button */
+html.light button.bg-zinc-800\/60 {
+  background-color: #f1f5f9 !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #334155 !important;
+}
+html.light button.bg-zinc-800\/60:hover {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+/* --- Global Surface Adapters (Pure White Cards & Items) --- */
+html.light .bg-\[\#09090b\],
+html.light .bg-\[\#09090b\]\/90,
+html.light .bg-\[\#09090b\]\/80 {
+  background-color: rgba(248, 250, 252, 0.95) !important;
+}
+
+html.light .bg-\[\#121216\],
+html.light .bg-\[\#121216\]\/80,
+html.light .bg-\[\#121216\]\/90 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03) !important;
+}
+
+/* Section Containers (like Meal columns, workout boxes) */
+html.light [class*="bg-zinc-900"] {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Nested Pill Items (like Meal Timeline log items, Exercise sets, inputs) */
+html.light [class*="bg-zinc-950"] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Quick Action Buttons inside cards (like "+ Add Item to Meal") */
+html.light [class*="bg-zinc-800"] {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #334155 !important;
+}
+
+html.light [class*="bg-zinc-800"]:hover {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+/* Color Accent Container Overrides */
+html.light [class*="bg-cyan-950"] {
+  background-color: #ecfeff !important;
+  border-color: #a5f3fc !important;
+  color: #0e7490 !important;
+}
+
+html.light [class*="bg-emerald-950"] {
+  background-color: #f0fdf4 !important;
+  border-color: #bbf7d0 !important;
+  color: #15803d !important;
+}
+
+html.light [class*="bg-rose-950"] {
+  background-color: #fff1f2 !important;
+  border-color: #fecdd3 !important;
+  color: #be123c !important;
+}
+
+/* --- Global Border Adapters --- */
+html.light [class*="border-zinc-800"],
+html.light [class*="border-zinc-700"] {
+  border-color: #e2e8f0 !important;
+}
+
+/* --- Typography Hierarchy --- */
+html.light .text-zinc-100,
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4 {
+  color: #0f172a !important;
+}
+
+html.light .text-zinc-200 {
+  color: #1e293b !important;
+}
+
+html.light .text-zinc-300 {
+  color: #334155 !important;
+}
+
+html.light .text-zinc-400 {
+  color: #64748b !important;
+}
+
+html.light .text-zinc-500 {
+  color: #94a3b8 !important;
+}
+
+html.light .text-zinc-600 {
+  color: #94a3b8 !important;
+}
+
+/* Ensure text inside nested items is dark and sharp */
+html.light [class*="bg-zinc-950"] .text-zinc-200,
+html.light [class*="bg-zinc-950"] .text-zinc-100 {
+  color: #0f172a !important;
+}
+
+html.light [class*="bg-zinc-950"] .text-zinc-400,
+html.light [class*="bg-zinc-950"] .text-zinc-500 {
+  color: #64748b !important;
+}
+
+/* --- Primary CTA & Accent Buttons --- */
+html.light .bg-indigo-600,
+html.light .bg-indigo-500 {
+  background-color: #d9531e !important;
+  color: #ffffff !important;
+}
+
+html.light .hover\:bg-indigo-500:hover,
+html.light .hover\:bg-indigo-600:hover {
+  background-color: #c24615 !important;
+  color: #ffffff !important;
+}
+
+html.light .text-indigo-400,
+html.light .text-indigo-500,
+html.light .text-indigo-300 {
+  color: #d9531e !important;
+}
+
+html.light .border-indigo-500,
+html.light .border-indigo-500\/80,
+html.light .border-indigo-500\/50,
+html.light .border-indigo-500\/30,
+html.light .border-indigo-500\/20 {
+  border-color: #d9531e !important;
+}
+
+html.light .bg-indigo-600\/20,
+html.light .bg-indigo-500\/20,
+html.light .bg-indigo-500\/10 {
+  background-color: rgba(217, 83, 30, 0.1) !important;
+  color: #d9531e !important;
+}
+
+html.light .shadow-indigo-500\/10,
+html.light .shadow-indigo-500\/20 {
+  box-shadow: 0 4px 14px rgba(217, 83, 30, 0.15) !important;
+}
+
+/* --- Secondary Outline Buttons --- */
+html.light a.bg-zinc-800\/80,
+html.light button.bg-zinc-800\/80,
+html.light .bg-zinc-800 {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+html.light a.bg-zinc-800\/80:hover,
+html.light button.bg-zinc-800\/80:hover {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+/* --- Form Inputs --- */
+html.light input,
+html.light select,
+html.light textarea {
+  color: #0f172a !important;
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+}
+
+html.light input:focus,
+html.light select:focus,
+html.light textarea:focus {
+  border-color: #d9531e !important;
+  outline-color: #d9531e !important;
+  box-shadow: 0 0 0 2px rgba(217, 83, 30, 0.2) !important;
+}
+
+html.light input::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* --- Backdrop Overrides --- */
+html.light .bg-black\/80 {
+  background-color: rgba(15, 23, 42, 0.3) !important;
+}
+
+/* --- Glassmorphism Overrides --- */
+html.light .backdrop-blur-xl,
+html.light .backdrop-blur-2xl {
+  backdrop-filter: blur(20px);
+}

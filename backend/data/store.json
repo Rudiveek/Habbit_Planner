@@ -1,0 +1,923 @@
+{
+  "users": [
+    {
+      "_id": "66a123456789012345678901",
+      "name": "Rudi Vance",
+      "email": "demo@habits.local",
+      "password": "$2a$10$g4sAWwZNutvLu6e1dMUezuypd6wsiMK9jeYLmVaMyWqz5EKNr1cnC",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
+      "preferences": {
+        "theme": "dark",
+        "accentColor": "indigo"
+      },
+      "createdAt": "2026-10-11T00:25:38.583Z"
+    },
+    {
+      "_id": "user_1791678811501_pho5md",
+      "name": "Alice Wonder",
+      "email": "alice@habits.test",
+      "password": "$2a$10$2BJdY94ndmJcz9BeZNz7S.FPQeGdoXVNDOIqMYPKiYXzUPbpjfi2G",
+      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=Alice%20Wonder&backgroundColor=6366f1,8b5cf6,ec4899",
+      "preferences": {
+        "theme": "dark",
+        "accentColor": "indigo"
+      },
+      "createdAt": "2026-10-11T00:33:31.501Z"
+    },
+    {
+      "_id": "user_1791678811620_mhqdz9",
+      "name": "Bob Builder",
+      "email": "bob@habits.test",
+      "password": "$2a$10$eR4wqPPmwA6naBHlr0tA1OVORMBw9KHlc6aYWwTXWSWJtMm1Rkcem",
+      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=Bob%20Builder&backgroundColor=6366f1,8b5cf6,ec4899",
+      "preferences": {
+        "theme": "dark",
+        "accentColor": "indigo"
+      },
+      "createdAt": "2026-10-11T00:33:31.620Z"
+    }
+  ],
+  "habits": [
+    {
+      "_id": "habit-1791678811754-yqf8",
+      "userId": "user_1791678811501_pho5md",
+      "title": "Alice Special Secret Habit",
+      "description": "",
+      "category": "Focus",
+      "frequency": "daily",
+      "scheduledDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "scheduledTime": "08:00 AM",
+      "color": "#6366f1",
+      "icon": "Target",
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "totalCompleted": 0,
+      "archived": false,
+      "createdAt": "2026-10-11T00:33:31.754Z"
+    },
+    {
+      "_id": "habit-101",
+      "userId": "66a123456789012345678901",
+      "title": "Morning Deep Reading",
+      "description": "Read high-impact chapters from Atomic Habits or Deep Work",
+      "category": "Personal Growth",
+      "frequency": "daily",
+      "scheduledDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "scheduledTime": "07:30 AM",
+      "color": "#8b5cf6",
+      "icon": "BookOpen",
+      "currentStreak": 5,
+      "longestStreak": 12,
+      "totalCompleted": 24,
+      "archived": false,
+      "createdAt": "2026-10-11T00:25:38.584Z"
+    },
+    {
+      "_id": "habit-102",
+      "userId": "66a123456789012345678901",
+      "title": "Mindful Box Breathing",
+      "description": "Calm the central nervous system with 15 mins of breathwork",
+      "category": "Health",
+      "frequency": "daily",
+      "scheduledDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "scheduledTime": "08:00 AM",
+      "color": "#06b6d4",
+      "icon": "Sparkles",
+      "currentStreak": 8,
+      "longestStreak": 15,
+      "totalCompleted": 30,
+      "archived": false,
+      "createdAt": "2026-10-11T00:25:38.584Z"
+    },
+    {
+      "_id": "habit-103",
+      "userId": "66a123456789012345678901",
+      "title": "Full-Stack Architecture & Code",
+      "description": "Build portfolio platforms with clean architecture",
+      "category": "Productivity",
+      "frequency": "custom",
+      "scheduledDays": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "scheduledTime": "10:00 AM",
+      "color": "#6366f1",
+      "icon": "Code",
+      "currentStreak": 6,
+      "longestStreak": 20,
+      "totalCompleted": 42,
+      "archived": false,
+      "createdAt": "2026-10-11T00:25:38.584Z"
+    },
+    {
+      "_id": "habit-104",
+      "userId": "66a123456789012345678901",
+      "title": "Hydration Target (3 Liters)",
+      "description": "Hit continuous hydration checkpoints throughout the day",
+      "category": "Health",
+      "frequency": "daily",
+      "scheduledDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "scheduledTime": "All Day",
+      "color": "#3b82f6",
+      "icon": "Droplet",
+      "currentStreak": 14,
+      "longestStreak": 30,
+      "totalCompleted": 65,
+      "archived": false,
+      "createdAt": "2026-10-11T00:25:38.584Z"
+    },
+    {
+      "_id": "habit-1791678811502-1",
+      "userId": "user_1791678811501_pho5md",
+      "title": "Morning Hydration & Sunlight",
+      "description": "Drink 500ml water and get 10 minutes of morning sunlight",
+      "category": "Health",
+      "frequency": "daily",
+      "scheduledDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "scheduledTime": "07:00 AM",
+      "color": "#06b6d4",
+      "icon": "Droplet",
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "totalCompleted": 0,
+      "archived": false,
+      "createdAt": "2026-10-11T00:33:31.502Z"
+    },
+    {
+      "_id": "habit-1791678811502-2",
+      "userId": "user_1791678811501_pho5md",
+      "title": "Deep Focused Work (45 Mins)",
+      "description": "Single-task with zero notifications or distractions",
+      "category": "Productivity",
+      "frequency": "custom",
+      "scheduledDays": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "scheduledTime": "09:30 AM",
+      "color": "#6366f1",
+      "icon": "Brain",
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "totalCompleted": 0,
+      "archived": false,
+      "createdAt": "2026-10-11T00:33:31.502Z"
+    },
+    {
+      "_id": "habit-1791678811502-3",
+      "userId": "user_1791678811501_pho5md",
+      "title": "Daily Movement & Physical Training",
+      "description": "Gym workout, brisk walk, or bodyweight circuit",
+      "category": "Fitness",
+      "frequency": "daily",
+      "scheduledDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "scheduledTime": "05:30 PM",
+      "color": "#10b981",
+      "icon": "Dumbbell",
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "totalCompleted": 0,
+      "archived": false,
+      "createdAt": "2026-10-11T00:33:31.502Z"
+    },
+    {
+      "_id": "habit-1791678811620-1",
+      "userId": "user_1791678811620_mhqdz9",
+      "title": "Morning Hydration & Sunlight",
+      "description": "Drink 500ml water and get 10 minutes of morning sunlight",
+      "category": "Health",
+      "frequency": "daily",
+      "scheduledDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "scheduledTime": "07:00 AM",
+      "color": "#06b6d4",
+      "icon": "Droplet",
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "totalCompleted": 0,
+      "archived": false,
+      "createdAt": "2026-10-11T00:33:31.620Z"
+    },
+    {
+      "_id": "habit-1791678811620-2",
+      "userId": "user_1791678811620_mhqdz9",
+      "title": "Deep Focused Work (45 Mins)",
+      "description": "Single-task with zero notifications or distractions",
+      "category": "Productivity",
+      "frequency": "custom",
+      "scheduledDays": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "scheduledTime": "09:30 AM",
+      "color": "#6366f1",
+      "icon": "Brain",
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "totalCompleted": 0,
+      "archived": false,
+      "createdAt": "2026-10-11T00:33:31.620Z"
+    },
+    {
+      "_id": "habit-1791678811620-3",
+      "userId": "user_1791678811620_mhqdz9",
+      "title": "Daily Movement & Physical Training",
+      "description": "Gym workout, brisk walk, or bodyweight circuit",
+      "category": "Fitness",
+      "frequency": "daily",
+      "scheduledDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "scheduledTime": "05:30 PM",
+      "color": "#10b981",
+      "icon": "Dumbbell",
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "totalCompleted": 0,
+      "archived": false,
+      "createdAt": "2026-10-11T00:33:31.620Z"
+    }
+  ],
+  "completions": [
+    {
+      "_id": "comp-habit-102-2026-10-11",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-102",
+      "completionDate": "2026-10-11",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-103-2026-10-11",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-103",
+      "completionDate": "2026-10-11",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-101-2026-10-10",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-101",
+      "completionDate": "2026-10-10",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-102-2026-10-10",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-102",
+      "completionDate": "2026-10-10",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-104-2026-10-10",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-104",
+      "completionDate": "2026-10-10",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-101-2026-10-09",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-101",
+      "completionDate": "2026-10-09",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-103-2026-10-09",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-103",
+      "completionDate": "2026-10-09",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-104-2026-10-09",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-104",
+      "completionDate": "2026-10-09",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-102-2026-10-08",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-102",
+      "completionDate": "2026-10-08",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-103-2026-10-08",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-103",
+      "completionDate": "2026-10-08",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-101-2026-10-07",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-101",
+      "completionDate": "2026-10-07",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-102-2026-10-07",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-102",
+      "completionDate": "2026-10-07",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-104-2026-10-07",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-104",
+      "completionDate": "2026-10-07",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-101-2026-10-06",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-101",
+      "completionDate": "2026-10-06",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-103-2026-10-06",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-103",
+      "completionDate": "2026-10-06",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-104-2026-10-06",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-104",
+      "completionDate": "2026-10-06",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-102-2026-10-05",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-102",
+      "completionDate": "2026-10-05",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-103-2026-10-05",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-103",
+      "completionDate": "2026-10-05",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-101-2026-10-04",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-101",
+      "completionDate": "2026-10-04",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-102-2026-10-04",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-102",
+      "completionDate": "2026-10-04",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-104-2026-10-04",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-104",
+      "completionDate": "2026-10-04",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-101-2026-10-03",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-101",
+      "completionDate": "2026-10-03",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-103-2026-10-03",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-103",
+      "completionDate": "2026-10-03",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-104-2026-10-03",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-104",
+      "completionDate": "2026-10-03",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-102-2026-10-02",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-102",
+      "completionDate": "2026-10-02",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-103-2026-10-02",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-103",
+      "completionDate": "2026-10-02",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-101-2026-10-01",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-101",
+      "completionDate": "2026-10-01",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-102-2026-10-01",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-102",
+      "completionDate": "2026-10-01",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-104-2026-10-01",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-104",
+      "completionDate": "2026-10-01",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-101-2026-09-30",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-101",
+      "completionDate": "2026-09-30",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-103-2026-09-30",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-103",
+      "completionDate": "2026-09-30",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-104-2026-09-30",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-104",
+      "completionDate": "2026-09-30",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-102-2026-09-29",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-102",
+      "completionDate": "2026-09-29",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-103-2026-09-29",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-103",
+      "completionDate": "2026-09-29",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-101-2026-09-28",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-101",
+      "completionDate": "2026-09-28",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-102-2026-09-28",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-102",
+      "completionDate": "2026-09-28",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-104-2026-09-28",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-104",
+      "completionDate": "2026-09-28",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-101-2026-09-27",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-101",
+      "completionDate": "2026-09-27",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-103-2026-09-27",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-103",
+      "completionDate": "2026-09-27",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-104-2026-09-27",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-104",
+      "completionDate": "2026-09-27",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-102-2026-09-26",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-102",
+      "completionDate": "2026-09-26",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-103-2026-09-26",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-103",
+      "completionDate": "2026-09-26",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-101-2026-09-25",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-101",
+      "completionDate": "2026-09-25",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-102-2026-09-25",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-102",
+      "completionDate": "2026-09-25",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-104-2026-09-25",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-104",
+      "completionDate": "2026-09-25",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-101-2026-09-24",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-101",
+      "completionDate": "2026-09-24",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-103-2026-09-24",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-103",
+      "completionDate": "2026-09-24",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-104-2026-09-24",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-104",
+      "completionDate": "2026-09-24",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-102-2026-09-23",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-102",
+      "completionDate": "2026-09-23",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-103-2026-09-23",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-103",
+      "completionDate": "2026-09-23",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-101-2026-09-22",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-101",
+      "completionDate": "2026-09-22",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-102-2026-09-22",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-102",
+      "completionDate": "2026-09-22",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-104-2026-09-22",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-104",
+      "completionDate": "2026-09-22",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-101-2026-09-21",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-101",
+      "completionDate": "2026-09-21",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-103-2026-09-21",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-103",
+      "completionDate": "2026-09-21",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-104-2026-09-21",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-104",
+      "completionDate": "2026-09-21",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-102-2026-09-20",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-102",
+      "completionDate": "2026-09-20",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-103-2026-09-20",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-103",
+      "completionDate": "2026-09-20",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-101-2026-09-19",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-101",
+      "completionDate": "2026-09-19",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-102-2026-09-19",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-102",
+      "completionDate": "2026-09-19",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-104-2026-09-19",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-104",
+      "completionDate": "2026-09-19",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-101-2026-09-18",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-101",
+      "completionDate": "2026-09-18",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-103-2026-09-18",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-103",
+      "completionDate": "2026-09-18",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-104-2026-09-18",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-104",
+      "completionDate": "2026-09-18",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-102-2026-09-17",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-102",
+      "completionDate": "2026-09-17",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-103-2026-09-17",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-103",
+      "completionDate": "2026-09-17",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-101-2026-09-16",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-101",
+      "completionDate": "2026-09-16",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-102-2026-09-16",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-102",
+      "completionDate": "2026-09-16",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-104-2026-09-16",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-104",
+      "completionDate": "2026-09-16",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-101-2026-09-15",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-101",
+      "completionDate": "2026-09-15",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-103-2026-09-15",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-103",
+      "completionDate": "2026-09-15",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-104-2026-09-15",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-104",
+      "completionDate": "2026-09-15",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-102-2026-09-14",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-102",
+      "completionDate": "2026-09-14",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-103-2026-09-14",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-103",
+      "completionDate": "2026-09-14",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-101-2026-09-13",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-101",
+      "completionDate": "2026-09-13",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-102-2026-09-13",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-102",
+      "completionDate": "2026-09-13",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-104-2026-09-13",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-104",
+      "completionDate": "2026-09-13",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-101-2026-09-12",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-101",
+      "completionDate": "2026-09-12",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-103-2026-09-12",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-103",
+      "completionDate": "2026-09-12",
+      "completed": true
+    },
+    {
+      "_id": "comp-habit-104-2026-09-12",
+      "userId": "66a123456789012345678901",
+      "habitId": "habit-104",
+      "completionDate": "2026-09-12",
+      "completed": true
+    }
+  ],
+  "tasks": [
+    {
+      "_id": "task-1",
+      "userId": "66a123456789012345678901",
+      "title": "Review System Architecture & Database indexes",
+      "description": "Ensure performance indexing across models",
+      "dueDate": "2026-10-11",
+      "priority": "High",
+      "category": "Engineering",
+      "status": "pending",
+      "createdAt": "2026-10-11T00:25:38.584Z"
+    },
+    {
+      "_id": "task-2",
+      "userId": "66a123456789012345678901",
+      "title": "Complete 45 min Push Session",
+      "description": "Bench press, overhead dumbbell press, tricep dips",
+      "dueDate": "2026-10-11",
+      "priority": "Medium",
+      "category": "Fitness",
+      "status": "completed",
+      "createdAt": "2026-10-11T00:25:38.584Z"
+    }
+  ],
+  "goals": [
+    {
+      "_id": "goal-1",
+      "userId": "66a123456789012345678901",
+      "title": "Master Full-Stack Modern Web Engineering",
+      "description": "Ship 3 complete portfolio-quality full-stack applications",
+      "category": "Engineering",
+      "targetDate": "2026-12-31",
+      "progress": 75,
+      "status": "in-progress",
+      "milestones": [
+        {
+          "title": "Habit Planner Full-Stack MVP with Auth",
+          "completed": true
+        },
+        {
+          "title": "Dynamic Calendar and Streak Visualizer",
+          "completed": true
+        },
+        {
+          "title": "Portfolio Production Documentation",
+          "completed": false
+        }
+      ]
+    }
+  ]
+}
