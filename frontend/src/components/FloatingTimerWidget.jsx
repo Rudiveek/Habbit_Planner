@@ -23,7 +23,7 @@ export const FloatingTimerWidget = () => {
   const timeFormatted = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 animate-slide-up select-none">
+    <div className="fixed bottom-20 right-4 md:bottom-6 md:right-6 z-40 animate-slide-up select-none">
       <div className="bg-[#121216]/95 backdrop-blur-xl border border-indigo-500/40 rounded-2xl p-3.5 shadow-2xl flex items-center gap-3.5 ring-1 ring-white/10 hover:border-indigo-400 transition-all duration-200">
         <button
           onClick={() => navigate('/focus')}

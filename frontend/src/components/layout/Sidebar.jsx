@@ -76,6 +76,8 @@ export function Sidebar() {
     return (
         <aside
             className="
+            hidden
+            md:flex
             fixed
             top-0
             left-0
