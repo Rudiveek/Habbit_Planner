@@ -342,6 +342,54 @@ class PersistentDB {
     return userWithoutPassword;
   }
 
+  async generatePasswordResetCode(email) {
+    const normalizedEmail = email.toLowerCase().trim();
+    const user = this.data.users.find((u) => u.email.toLowerCase() === normalizedEmail);
+    if (!user) {
+      throw new Error('No account found with this email address. Please register.');
+    }
+
+    // Generate secure 6-digit verification code
+    const resetCode = Math.floor(100000 + Math.random() * 900000).toString();
+    user.resetCode = resetCode;
+    user.resetCodeExpires = Date.now() + 15 * 60 * 1000; // 15 mins
+    this.save();
+
+    return {
+      email: normalizedEmail,
+      resetCode,
+      userName: user.name,
+    };
+  }
+
+  async resetPasswordWithCode({ email, code, newPassword }) {
+    const normalizedEmail = email.toLowerCase().trim();
+    const user = this.data.users.find((u) => u.email.toLowerCase() === normalizedEmail);
+    if (!user) {
+      throw new Error('No account found with this email address.');
+    }
+
+    if (!user.resetCode || user.resetCode !== String(code).trim()) {
+      throw new Error('Invalid verification code. Please check the code and try again.');
+    }
+
+    if (!user.resetCodeExpires || Date.now() > user.resetCodeExpires) {
+      throw new Error('This verification code has expired. Please request a new code.');
+    }
+
+    if (!newPassword || newPassword.length < 6) {
+      throw new Error('New password must be at least 6 characters long.');
+    }
+
+    const salt = await bcrypt.genSalt(10);
+    user.password = await bcrypt.hash(newPassword, salt);
+    delete user.resetCode;
+    delete user.resetCodeExpires;
+    this.save();
+
+    return { success: true };
+  }
+
   // --- HABITS (Strictly filtered per user) ---
   getHabits(userId) {
     const userHabits = this.data.habits.filter((h) => h.userId === userId && !h.archived);

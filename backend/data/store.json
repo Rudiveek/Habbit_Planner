@@ -16,7 +16,7 @@
       "_id": "user_1791678811501_pho5md",
       "name": "Alice Wonder",
       "email": "alice@habits.test",
-      "password": "$2a$10$2BJdY94ndmJcz9BeZNz7S.FPQeGdoXVNDOIqMYPKiYXzUPbpjfi2G",
+      "password": "$2a$10$IinnX5tTa57j1IzXonehauCxw/KGaZZudKhQmNlZUrHyWGmEBBRG6",
       "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=Alice%20Wonder&backgroundColor=6366f1,8b5cf6,ec4899",
       "preferences": {
         "theme": "dark",

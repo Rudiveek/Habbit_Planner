@@ -20,6 +20,7 @@ import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import ForgotPassword from "./pages/ForgotPassword";
 
 // Habitify-style Smart Root Route:
 // Unauthenticated visitors see the public SaaS landing page;
@@ -55,6 +56,7 @@ function App() {
                         {/* 2. Public Authentication Routes */}
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
+                        <Route path="/forgot-password" element={<ForgotPassword />} />
 
                         {/* 3. Protected Member Dashboard & Features */}
                         <Route element={<ProtectedRoute />}>

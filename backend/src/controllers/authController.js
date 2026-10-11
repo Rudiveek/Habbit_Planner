@@ -252,3 +252,64 @@ export const updateUserProfile = async (req, res, next) => {
     next(error);
   }
 };
+
+/**
+ * @desc    Request a password reset code
+ * @route   POST /api/auth/forgot-password
+ * @access  Public
+ */
+export const forgotPassword = async (req, res, next) => {
+  try {
+    const { email } = req.body;
+    if (!email) {
+      res.status(400);
+      throw new Error('Please provide your account email address');
+    }
+
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(email.trim())) {
+      res.status(400);
+      throw new Error('Please provide a valid email address');
+    }
+
+    const result = await persistentDB.generatePasswordResetCode(email);
+
+    res.status(200).json({
+      success: true,
+      message: `Verification code generated for ${result.email}`,
+      resetCode: result.resetCode,
+      email: result.email,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+/**
+ * @desc    Reset password with verification code
+ * @route   POST /api/auth/reset-password
+ * @access  Public
+ */
+export const resetPassword = async (req, res, next) => {
+  try {
+    const { email, code, newPassword } = req.body;
+    if (!email || !code || !newPassword) {
+      res.status(400);
+      throw new Error('Please provide email, verification code, and new password');
+    }
+
+    if (newPassword.length < 6) {
+      res.status(400);
+      throw new Error('New password must be at least 6 characters long');
+    }
+
+    await persistentDB.resetPasswordWithCode({ email, code, newPassword });
+
+    res.status(200).json({
+      success: true,
+      message: 'Password reset successfully. You can now log in with your new password.',
+    });
+  } catch (error) {
+    next(error);
+  }
+};

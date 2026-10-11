@@ -23,18 +23,9 @@ import {
 } from 'lucide-react';
 
 export default function LandingPage() {
-  const { user, login } = useAuth();
+  const { user } = useAuth();
   const { theme, toggleTheme } = useApp();
   const navigate = useNavigate();
-
-  const handleQuickDemo = async () => {
-    try {
-      await login('demo@habits.local', 'secret123');
-      navigate('/dashboard');
-    } catch (err) {
-      navigate('/login');
-    }
-  };
 
   return (
     <div className={`min-h-screen transition-colors duration-200 ${
@@ -130,13 +121,12 @@ export default function LandingPage() {
             <ArrowRight className="w-4 h-4" />
           </Link>
 
-          <button
-            onClick={handleQuickDemo}
-            className="w-full sm:w-auto px-6 py-4 rounded-2xl bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-700/80 text-zinc-200 font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2"
+          <Link
+            to="/login"
+            className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-700/80 text-zinc-200 font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2"
           >
-            <Sparkles className="w-4 h-4 text-amber-400" />
-            <span>Try 1-Click Interactive Demo</span>
-          </button>
+            <span>Sign In to Existing Account</span>
+          </Link>
         </div>
 
         {/* Trust Badges */}

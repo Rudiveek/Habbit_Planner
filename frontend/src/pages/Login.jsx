@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import AuraLogo from '../components/AuraLogo';
-import { Sparkles, Mail, Lock, ArrowRight, AlertCircle, ShieldCheck } from 'lucide-react';
+import { Mail, Lock, ArrowRight, AlertCircle } from 'lucide-react';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -36,17 +36,6 @@ export default function Login() {
       navigate('/dashboard');
     } else {
       setError(result.error || 'Invalid credentials');
-    }
-  };
-
-  const handleDemoLogin = async () => {
-    setEmail('demo@habits.local');
-    setPassword('secret123');
-    setIsSubmitting(true);
-    const result = await login('demo@habits.local', 'secret123');
-    setIsSubmitting(false);
-    if (result.success) {
-      navigate('/dashboard');
     }
   };
 
@@ -88,7 +77,7 @@ export default function Login() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="alex@example.com"
+                  placeholder="name@example.com"
                   className="w-full bg-zinc-950/80 border border-zinc-800 rounded-xl py-3 pl-11 pr-4 text-sm text-zinc-200 placeholder:text-zinc-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
                   required
                 />
@@ -100,6 +89,12 @@ export default function Login() {
                 <label className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
                   Password
                 </label>
+                <Link
+                  to="/forgot-password"
+                  className="text-xs text-indigo-400 hover:text-indigo-300 font-semibold transition-colors"
+                >
+                  Forgot password?
+                </Link>
               </div>
               <div className="relative">
                 <Lock className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500" />
@@ -124,19 +119,7 @@ export default function Login() {
             </button>
           </form>
 
-          {/* Quick Demo Access */}
-          <div className="mt-6 pt-6 border-t border-zinc-800/60">
-            <button
-              type="button"
-              onClick={handleDemoLogin}
-              className="w-full py-2.5 px-3 rounded-xl bg-zinc-800/40 hover:bg-zinc-800 border border-zinc-700/60 text-zinc-300 text-xs font-medium transition-all flex items-center justify-center gap-2"
-            >
-              <ShieldCheck className="w-3.5 h-3.5 text-indigo-400" />
-              <span>Instant One-Click Demo Access</span>
-            </button>
-          </div>
-
-          <div className="mt-6 text-center text-xs text-zinc-500">
+          <div className="mt-6 pt-6 border-t border-zinc-800/60 text-center text-xs text-zinc-500">
             Don't have an account yet?{' '}
             <Link to="/register" className="text-indigo-400 hover:text-indigo-300 font-semibold underline underline-offset-4 ml-1">
               Create an account
